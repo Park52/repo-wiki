@@ -1,0 +1,60 @@
+{
+  "name": "repo-wiki",
+  "version": "0.1.0",
+  "description": "RepoWiki CLI - Agentic AI for repository Q&A and wiki generation",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "repo-wiki": "./dist/index.js",
+    "repowiki": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "llm",
+    "cli",
+    "codebase",
+    "documentation",
+    "wiki",
+    "repository",
+    "code-analysis"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/user/repo-wiki.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/user/repo-wiki/issues"
+  },
+  "homepage": "https://github.com/user/repo-wiki#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@repo-wiki/core": "^0.1.0",
+    "commander": "^12.0.0",
+    "chalk": "^5.3.0",
+    "ora": "^8.0.0"
+  },
+  "devDependencies": {},
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
