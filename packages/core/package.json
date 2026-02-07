@@ -1,0 +1,63 @@
+{
+  "name": "@repo-wiki/core",
+  "version": "0.1.0",
+  "description": "Core library for RepoWiki - agent loop, LLM, indexer",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "llm",
+    "codebase",
+    "documentation",
+    "wiki",
+    "repository",
+    "indexer"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/user/repo-wiki.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/user/repo-wiki/issues"
+  },
+  "homepage": "https://github.com/user/repo-wiki#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.0.0",
+    "openai": "^4.20.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.8"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

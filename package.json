@@ -1,0 +1,41 @@
+{
+  "name": "repo-wiki-monorepo",
+  "version": "0.1.0",
+  "description": "Agentic AI CLI for repository Q&A and wiki generation",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=@repo-wiki/core && npm run build --workspace=repo-wiki",
+    "dev": "npm run dev --workspace=@repo-wiki/cli",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:ollama": "./scripts/test-with-ollama.sh",
+    "test:ollama:quick": "./scripts/quick-test.sh",
+    "setup:ollama": "./scripts/setup-ollama.sh",
+    "lint": "eslint packages/*/src/**/*.ts",
+    "typecheck": "tsc --build",
+    "clean": "rm -rf packages/*/dist coverage",
+    "prepublishOnly": "npm run build && npm run test",
+    "version:patch": "npm version patch --workspaces --no-git-tag-version",
+    "version:minor": "npm version minor --workspaces --no-git-tag-version",
+    "version:major": "npm version major --workspaces --no-git-tag-version",
+    "publish:dry": "npm run build && npm publish --dry-run --workspaces",
+    "publish:release": "npm run build && npm run test && npm publish --workspaces --access public"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0",
+    "eslint": "^8.55.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "vitest": "^2.0.0",
+    "@vitest/coverage-v8": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
