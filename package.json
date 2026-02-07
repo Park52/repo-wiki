@@ -8,7 +8,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "npm run build --workspaces",
+    "build": "npm run build --workspace=@repo-wiki/core && npm run build --workspace=repo-wiki",
     "dev": "npm run dev --workspace=@repo-wiki/cli",
     "test": "vitest run",
     "test:watch": "vitest",
